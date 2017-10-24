@@ -27,7 +27,7 @@ public class MainActivity extends Activity {
             public void onClick(View view) {
                 Toast.makeText(MainActivity.this, "Clicked", Toast.LENGTH_LONG).show();
 
-                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+                Intent intent = new Intent(MainActivity.this, CustomListActivity.class);
                 intent.putExtra("maKey", "Ma variable entre 2 activities");
                 intent.putExtra("maKeyInt", 10);
                 MainActivity.this.startActivity(intent);
