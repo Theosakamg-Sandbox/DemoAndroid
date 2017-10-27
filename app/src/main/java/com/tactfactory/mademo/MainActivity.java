@@ -1,6 +1,8 @@
 package com.tactfactory.mademo;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -43,6 +45,40 @@ public class MainActivity extends Activity {
 //                MainActivity.this.startActivity(intent);
             }
         });
+
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder
+                .setTitle("My Title")
+                //.setMessage("My content in Alert...")
+                .setItems(R.array.colors, new DialogInterface.OnClickListener() {
+
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                    }
+                })
+/*
+                .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Toast.makeText(MainActivity.this, "OK clicked !", Toast.LENGTH_SHORT).show();
+                    }
+                })
+*/
+                .setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Toast.makeText(MainActivity.this, "Cancel clicked !", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+
+
+        builder.create().show();
+
     }
 
     @Override
